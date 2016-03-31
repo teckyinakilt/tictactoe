@@ -17,17 +17,32 @@ class MatchesController < ApplicationController
     @match = Match.new
   end
 
+  # POST /matches
+  # POST /matches.json
+  def create
+    @match = Match.new()
+    # TODO: reformat to prevent user injection
+    @match.play_in_position(params[:button])
+
+    if @match.save
+      render :edit
+    else
+      render :new
+    end
+
+  end
+  
   # PATCH/PUT /matches/1
   # PATCH/PUT /matches/1.json
   def update
-    respond_to do |format|
-      if @match.update(match_params)
-        format.html { redirect_to @match, notice: 'Match was successfully updated.' }
-        format.json { render :show, status: :ok, location: @match }
-      else
-        format.html { render :edit }
-        format.json { render json: @match.errors, status: :unprocessable_entity }
-      end
+    # TODO: reformat to prevent user injection
+    @match.play_in_position(params[:button])
+    @match.save
+    
+    if @match.winning_state == "open"
+      render :edit
+    else
+      redirect_to @match
     end
   end
 
@@ -48,7 +63,8 @@ class MatchesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def match_params
-      params.require(:match).permit(:winning_state, :current_player)
-    end
+    # totally breaking this thought process for expediancy, TODO: bring back security
+    # def match_params
+    #   params.require(:match).permit(:winning_state, :current_player)
+    # end
 end

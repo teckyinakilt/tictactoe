@@ -10,16 +10,83 @@
       </ul>
     </div>
   <% end %>
+  
+  <% if @match.winning_state == "open" %>
+    <h2> It is currently <%= pretty_current_player(@match.current_player) %>'s turn.
+  <% else %>
+    <h2><%= pretty_winning_state(@match.winning_state) %></h2>
+  <% end %>
+  <br/>
 
-  <div class="field">
-    <%= f.label :winning_state %><br>
-    <%= f.text_field :winning_state %>
-  </div>
-  <div class="field">
-    <%= f.label :current_player %><br>
-    <%= f.text_field :current_player %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table class="ttt-board">
+    <tr>
+      <td>
+        <% if @match.a1.nil? %>
+          <%= f.button "", :type => "submit", :value => "a1"  %>
+        <% else %>
+          <%= enum_to_string(@match.a1)%>
+        <% end %>
+      </td>
+      <td>
+        <% if @match.a2.nil? %>
+          <%= f.button "", :type => "submit", :value => "a2"  %>
+        <% else %>
+          <%= enum_to_string(@match.a2)%>
+        <% end %>
+      </td>
+      <td>
+        <% if @match.a3.nil? %>
+          <%= f.button "", :type => "submit", :value => "a3"  %>
+        <% else %>
+          <%= enum_to_string(@match.a3)%>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% if @match.b1.nil? %>
+          <%= f.button "", :type => "submit", :value => "b1"  %>
+        <% else %>
+          <%= enum_to_string(@match.b1)%>
+        <% end %>
+      </td>
+      <td>
+        <% if @match.b2.nil? %>
+          <%= f.button "", :type => "submit", :value => "b2"  %>
+        <% else %>
+          <%= enum_to_string(@match.b2)%>
+        <% end %>
+      </td>
+      <td>
+        <% if @match.b3.nil? %>
+          <%= f.button "", :type => "submit", :value => "b3"  %>
+        <% else %>
+          <%= enum_to_string(@match.b3)%>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% if @match.c1.nil? %>
+          <%= f.button "", :type => "submit", :value => "c1"  %>
+        <% else %>
+          <%= enum_to_string(@match.c1)%>
+        <% end %>
+      </td>
+      <td>
+        <% if @match.c2.nil? %>
+          <%= f.button "", :type => "submit", :value => "c2"  %>
+        <% else %>
+          <%= enum_to_string(@match.c2)%>
+        <% end %>
+      </td>
+      <td>
+        <% if @match.c3.nil? %>
+          <%= f.button "", :type => "submit", :value => "c3"  %>
+        <% else %>
+          <%= enum_to_string(@match.c3)%>
+        <% end %>
+      </td>
+    </tr>
+  </table>
 <% end %>
