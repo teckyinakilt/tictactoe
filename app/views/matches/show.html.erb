@@ -2,13 +2,30 @@
 
 <p>
   <strong>Winning state:</strong>
-  <%= @match.winning_state %>
+  <%= pretty_winning_state(@match.winning_state) %>
 </p>
 
 <p>
   <strong>Current player:</strong>
-  <%= @match.current_player %>
+  <%= pretty_current_player(@match.current_player) %>
 </p>
 
-<%= link_to 'Edit', edit_match_path(@match) %> |
+<table class="ttt-board">
+  <tr>
+    <td><%= enum_to_string(@match.a1) %></td>
+    <td><%= enum_to_string(@match.a2) %></td>
+    <td><%= enum_to_string(@match.a3) %></td>
+  </tr>
+  <tr>
+    <td><%= enum_to_string(@match.b1) %></td>
+    <td><%= enum_to_string(@match.b2) %></td>
+    <td><%= enum_to_string(@match.b3) %></td>
+  </tr>
+  <tr>
+    <td><%= enum_to_string(@match.c1) %></td>
+    <td><%= enum_to_string(@match.c2) %></td>
+    <td><%= enum_to_string(@match.c3) %></td>
+  </tr>
+</table>
+
 <%= link_to 'Back', matches_path %>

@@ -1,3 +1,19 @@
 // Place all the styles related to the Matches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ttt-board {
+  border: solid;
+  border-collapse: collapse;
+}
+
+.ttt-board td {
+  border: solid;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+}
+
+.ttt-board tr {
+  border: solid;
+}
