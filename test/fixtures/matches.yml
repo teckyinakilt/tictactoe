@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  winning_state: 
+  current_player: 
+
+two:
+  winning_state: 
+  current_player: 

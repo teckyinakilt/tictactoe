@@ -20,8 +20,21 @@ Database: SQLight
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
 
-* ...
+TODO:
+clean up readme
+
+know match state
+switch current player
+accept move (update match state)
+display tictactoe board
+display match state
+display player turn
+calculate winning state
+display winning state
+test coverage
+save matches
+show historic matches
+improve validations
+

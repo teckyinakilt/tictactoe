@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Winning state:</strong>
+  <%= @match.winning_state %>
+</p>
+
+<p>
+  <strong>Current player:</strong>
+  <%= @match.current_player %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>
