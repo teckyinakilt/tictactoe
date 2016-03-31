@@ -7,7 +7,9 @@ Things you may want to cover:
 
 * Ruby version
 Ruby version 2.2.4
+
 Rails version 4.2.6
+
 Database: SQLight
 
 * System dependencies
@@ -15,26 +17,30 @@ Database: SQLight
 * Configuration
 
 * Database creation
+running ```sh
+rake db:migrate
+``` should be sufficient
 
 * Database initialization
 
 * How to run the test suite
 
 * Deployment instructions
+This is set up to run locally
+```sh
+$ bundle
+$ rake db:migrate
+$ rails s
+```
+[http://localhost:3000/matches][http://localhost:3000/matches]
 
 TODO:
-clean up readme
 
-know match state
-switch current player
-accept move (update match state)
-display tictactoe board
-display match state
-display player turn
-calculate winning state
-display winning state
-test coverage
-save matches
-show historic matches
+test coverage - ran into issues with setting up rspec. Opted to finish on time with manual testing instead of losing time fighting with a broken rspec setup.
+
 improve validations
+
+implement running score on landing page
+
+clean up readme
 
